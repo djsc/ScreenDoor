@@ -5,12 +5,11 @@ This is a React Native app compatible with Android and iOS. It simply allows use
 ## Firebase Setup:
 * Go to https://console.firebase.google.com/
 * Add a project
-* Dashboard -> Project settings -> Add Firebase to your web app. **Note the fields in between the curly braces for later**
+* Add an app to the project: Dashboard -> Project settings -> General -> Add App -> Web. **Note the firebaseConfig for later**
 * Dashboard -> Authentication -> Sign in method -> Email/Password -> Enable
-* Dashboard -> Authentication -> Users -> Add user -> **Use username and password inside app to log in**
-* Dashboard -> Database -> Create database (locked mode) #This creates a Firestore database which we won't be using
-* Every time you go to the databse tab from the dashboard, select Realtime Database at the top instead of Firestore
-* Dashboard -> Database  -> Rules -> Publish the following rules:
+* Dashboard -> Authentication -> Users -> Add user -> **Use this username and password inside app to log in**
+* Dashboard -> Firestore Database -> Create database (locked mode) #This creates a Firestore database which we won't be using
+* Dashboard -> Realtime Database  -> Rules -> Publish the following rules:
 ```
 {
   "rules": {
@@ -22,9 +21,9 @@ This is a React Native app compatible with Android and iOS. It simply allows use
         ".indexOn": "timePosted",
           "$postID": {
           	".validate": "newData.hasChildren(['text', 'timePosted', 'uuid']) &&
-          	    newData.child('text').isString() &&
-                    newData.child('timePosted').isNumber() &&
-                    newData.child('uuid').isString()"
+                newData.child('text').isString() &&
+                newData.child('timePosted').isNumber() &&
+                newData.child('uuid').isString()"
           }
         },
         "lastHeartbeat": {
