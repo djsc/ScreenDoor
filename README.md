@@ -41,12 +41,12 @@ This is a React Native app compatible with Android and iOS. It simply allows use
 ## Build environment setup
 * Install yarn: https://yarnpkg.com/en/docs/install
 * Follow the steps in the Native Code section on https://facebook.github.io/react-native/docs/getting-started.html
-* Install typescript globally: yarn global add typescript
+* Install typescript globally: ```yarn global add typescript```
 
 ## Build project
-* Install dependencies: yarn install
-* Transpile typescript: tsc
+* Install dependencies: ```yarn install```
+* Transpile typescript: ```tsc```
 
 ## Run project on device
-* iOS: react-native run-ios
-* Android: react-native run-android
+* iOS: ```react-native run-ios```
+* Android: ```react-native run-android```
