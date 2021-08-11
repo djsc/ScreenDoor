@@ -40,7 +40,7 @@ This is a React Native app compatible with Android and iOS. It simply allows use
 
 ## Build environment setup
 * Install yarn: https://yarnpkg.com/en/docs/install
-* Follow the steps in the Native Code section on https://facebook.github.io/react-native/docs/getting-started.html
+* Follow the steps in the React Native CLI Quickstart section on https://reactnative.dev/docs/environment-setup
 * Install typescript globally: ```yarn global add typescript```
 
 ## Build project
