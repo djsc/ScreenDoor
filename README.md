@@ -48,5 +48,5 @@ This is a React Native app compatible with Android and iOS. It simply allows use
 * Transpile typescript: ```tsc```
 
 ## Run project on device
-* iOS: ```react-native run-ios```
-* Android: ```react-native run-android```
+* iOS: ```npx react-native run-ios```
+* Android: ```npx react-native run-android```
