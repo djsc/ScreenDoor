@@ -119,6 +119,7 @@ const styles = StyleSheet.create({
         textAlignVertical: 'top',
         padding: whitespace.s,
         fontSize: fontSizes.m,
+        color: colors.appBlack,
         flex: 1
     },
     containerStyleBorder: {

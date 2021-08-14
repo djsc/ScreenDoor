@@ -69,7 +69,7 @@ class Feed extends React.Component<Props> {
             'Delete the post?',
             [
                 { text: 'Cancel', onPress: () => { }, style: 'cancel' },
-                { text: 'OK', onPress: () => this.props.deletePost(uuid).catch(err => { alert('Failed to delete the post: ' + err); }) }
+                { text: 'OK', onPress: () => this.props.deletePost(uuid).catch(err => { Alert.alert('Failed to delete the post: ' + err); }) }
             ]
         );
     }
@@ -84,7 +84,7 @@ class Feed extends React.Component<Props> {
                     text: 'OK', onPress: () => {
                         this.props.repostPost(uuid)
                             .then(() => this.props.navigation.navigate('StatusScreen'))
-                            .catch(err => { alert('Failed to repost the post: ' + err); });
+                            .catch(err => { Alert.alert('Failed to repost the post: ' + err); });
                     }
                 }
             ]

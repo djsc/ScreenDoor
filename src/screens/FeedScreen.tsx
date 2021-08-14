@@ -2,6 +2,7 @@ import React from 'react';
 import { View, StyleSheet, TouchableOpacity, Keyboard } from 'react-native';
 import { NavigationScreenProp } from 'react-navigation';
 import Feed from '../components/Feed';
+import { colors } from '../config/globalStyles';
 
 interface Props {
     navigation: NavigationScreenProp<any>;
@@ -28,9 +29,11 @@ export default class FeedScreen extends React.Component<Props> {
 
 const styles = StyleSheet.create({
     touchableContainer: {
-        flex: 1
+        flex: 1,
+        backgroundColor: colors.appWhite
     },
     container: {
-        flex: 1
+        flex: 1,
+        backgroundColor: colors.appWhite
     }
 });

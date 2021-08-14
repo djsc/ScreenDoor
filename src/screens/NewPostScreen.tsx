@@ -68,7 +68,7 @@ class NewPostScreen extends React.Component<Props> {
                         text: 'OK', onPress: () => {
                             this.props.addPost(newPostInput)
                                 .then(() => navigation.navigate('StatusScreen'))
-                                .catch(err => alert('Failed to add the post: ' + err));
+                                .catch(err => Alert.alert('Failed to add the post: ' + err));
                         }
                     }
                 ]
@@ -103,7 +103,8 @@ class NewPostScreen extends React.Component<Props> {
 
 const styles = StyleSheet.create({
     touchableContainer: {
-        flex: 1
+        flex: 1,
+        backgroundColor: colors.appWhite
     },
     container: {
         flex: 1,
@@ -111,6 +112,7 @@ const styles = StyleSheet.create({
         height: dimensions.s
     },
     inputContainer: {
+        backgroundColor: colors.appWhite,
         paddingBottom: whitespace.xs
     },
     inputFooter: {

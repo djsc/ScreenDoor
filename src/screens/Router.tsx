@@ -1,28 +1,39 @@
-import { createMaterialTopTabNavigator, createStackNavigator } from 'react-navigation';
+import { createStackNavigator } from 'react-navigation-stack';
+import { createMaterialTopTabNavigator } from 'react-navigation-tabs';
+import { createAppContainer } from 'react-navigation';
 import StatusScreen from './StatusScreen';
 import NewPostScreen from './NewPostScreen';
 import FeedScreen from './FeedScreen';
 import SettingsScreen from './SettingsScreen';
 import LoginScreen from './LoginScreen';
-import { fontSizes, colors, whitespace } from '../config/globalStyles';
-import { Platform } from 'react-native';
+import { fontSizes, colors } from '../config/globalStyles';
 
-export const LoginNavigator = createStackNavigator(
+export const LoginNavigator = createAppContainer(createStackNavigator(
     {
-        LoginScreen: LoginScreen
+        LoginScreen: {
+            screen: LoginScreen
+        }
     },
     {
         initialRouteName: 'LoginScreen',
         headerMode: 'none'
     }
-);
+));
 
-export const MainNavigator = createMaterialTopTabNavigator(
+export const MainNavigator = createAppContainer(createMaterialTopTabNavigator(
     {
-        StatusScreen: StatusScreen,
-        NewPostScreen: NewPostScreen,
-        FeedScreen: FeedScreen,
-        SettingsScreen: SettingsScreen
+        StatusScreen: {
+            screen: StatusScreen
+        },
+        NewPostScreen: {
+            screen: NewPostScreen
+        },
+        FeedScreen: {
+            screen: FeedScreen
+        },
+        SettingsScreen: {
+            screen: SettingsScreen
+        }
     },
     {
         initialRouteName: 'StatusScreen',
@@ -31,9 +42,8 @@ export const MainNavigator = createMaterialTopTabNavigator(
                 fontSize: fontSizes.xs
             },
             style: {
-                paddingTop: Platform.OS === 'ios' ? whitespace.s : 0,
                 backgroundColor: colors.appOrange
             }
         }
     }
-);
+));

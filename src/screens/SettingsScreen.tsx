@@ -6,7 +6,7 @@ import { NavigationScreenProp } from 'react-navigation';
 import Header from '../components/Header';
 import Input from '../components/Input';
 import Button from '../components/Button';
-import { fontSizes, whitespace, dimensions } from '../config/globalStyles';
+import { fontSizes, whitespace, dimensions, colors } from '../config/globalStyles';
 import { ThunkDispatch } from 'redux-thunk';
 import { RootState } from '../reducers';
 import { AnyAction } from 'redux';
@@ -82,13 +82,15 @@ class SettingsScreen extends React.Component<Props> {
 
 const styles = StyleSheet.create({
     touchableContainer: {
-        flex: 1
+        flex: 1,
+        backgroundColor: colors.appWhite
     },
     container: {
         flex: 1,
         flexDirection: 'column'
     },
     settingContainer: {
+        backgroundColor: colors.appWhite,
         flexDirection: 'row',
         alignItems: 'center',
         height: dimensions.m

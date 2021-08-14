@@ -1,4 +1,5 @@
 import React from 'react';
+import { StyleSheet } from 'react-native';
 import { connect } from 'react-redux';
 import { MainNavigator, LoginNavigator } from './Router';
 import LoadingScreen from './LoadingScreen';
@@ -7,6 +8,8 @@ import { RootState } from '../reducers';
 import { AnyAction } from 'redux';
 import { initializeFirebase } from '../actions';
 import ErrorScreen from './ErrorScreen';
+import { SafeAreaProvider, SafeAreaView } from 'react-native-safe-area-context';
+import { colors } from '../config/globalStyles';
 
 interface Props {
     userAuthorized?: boolean;
@@ -20,7 +23,8 @@ interface Props {
 }
 
 class App extends React.Component<Props> {
-    componentWillMount() {
+    constructor(props: Props) {
+        super(props);
         if (this.props.firebaseInitializing === false && this.props.firebaseInitialized === false) {
             this.props.initializeFirebase();
         }
@@ -43,10 +47,21 @@ class App extends React.Component<Props> {
 
     render() {
         return (
-            this.getContent()
+            <SafeAreaProvider>
+                <SafeAreaView style={styles.container}>
+                    {this.getContent()}
+                </SafeAreaView>
+            </SafeAreaProvider>
         );
     }
 }
+
+const styles = StyleSheet.create({
+    container: {
+        flex: 1,
+        backgroundColor: colors.appWhite
+    }
+});
 
 const mapStateToProps = (state: RootState) => {
     return {

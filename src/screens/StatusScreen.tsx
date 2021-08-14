@@ -6,7 +6,7 @@ import Header from '../components/Header';
 import Icon from 'react-native-vector-icons/MaterialIcons';
 import { connect } from 'react-redux';
 import { Status, StatusColor, StatusType } from '../types';
-import { fontSizes, whitespace, iconSizes } from '../config/globalStyles';
+import { fontSizes, whitespace, iconSizes, colors } from '../config/globalStyles';
 import { RootState } from '../reducers';
 
 interface Props {
@@ -66,7 +66,8 @@ const mapStateToProps = (state: RootState) => {
 
 const styles = StyleSheet.create({
     touchableContainer: {
-        flex: 1
+        flex: 1,
+        backgroundColor: colors.appWhite
     },
     statusContainer: {
         marginTop: whitespace.s,
@@ -78,7 +79,8 @@ const styles = StyleSheet.create({
         fontSize: fontSizes.l
     },
     container: {
-        flex: 1
+        flex: 1,
+        backgroundColor: colors.appWhite
     }
 });
 

@@ -1,10 +1,9 @@
 import firebase from '@firebase/app';
-import { database } from 'firebase';
 import { createAction, ActionType } from 'typesafe-actions';
 import { Post } from '../types';
 import moment from 'moment';
 import 'moment-timezone';
-import uuidv4 from 'uuid/v4';
+import { v4 as uuidv4 } from 'uuid';
 import { ThunkDispatch } from 'redux-thunk';
 import { RootState } from '../reducers';
 import { AnyAction } from 'redux';
@@ -113,7 +112,7 @@ export const getLastPost = () => (
         }
         //@ts-ignore
         firebase.database().ref(`/users/${currentUser.uid}/posts`).orderByChild('timePosted').limitToLast(1)
-            .once('value', (snapshot: database.DataSnapshot | null) => {
+            .once('value', (snapshot) => {
                 if (snapshot === null || snapshot.hasChildren() === false) {
                     dispatch(postActions.lastPostObtained());
                     return;
@@ -147,7 +146,7 @@ export const setupPostListener = () => (
         }
         //@ts-ignore
         const postsRef = firebase.database().ref(`/users/${currentUser.uid}/posts`);
-        postsRef.on('child_added', (data: database.DataSnapshot | null) => {
+        postsRef.on('child_added', (data) => {
             dispatch(postActions.fetchingPost());
             if (data === null) {
                 dispatch(postActions.postFetched());
@@ -161,7 +160,7 @@ export const setupPostListener = () => (
             dispatch(postActions.addPostDetected(post));
             dispatch(postActions.postFetched());
         });
-        postsRef.on('child_changed', (data: database.DataSnapshot | null) => {
+        postsRef.on('child_changed', (data) => {
             dispatch(postActions.fetchingPost());
             if (data === null) {
                 dispatch(postActions.postFetched());
@@ -175,7 +174,7 @@ export const setupPostListener = () => (
             dispatch(postActions.changePostDetected(post));
             dispatch(postActions.postFetched());
         });
-        postsRef.on('child_removed', (data: database.DataSnapshot | null) => {
+        postsRef.on('child_removed', (data) => {
             dispatch(postActions.fetchingPost());
             if (data === null) {
                 dispatch(postActions.postFetched());

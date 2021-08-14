@@ -43,10 +43,12 @@ class ErrorScreen extends React.Component<Props> {
 
 const styles = StyleSheet.create({
     touchableContainer: {
-        flex: 1
+        flex: 1,
+        backgroundColor: colors.appWhite
     },
     container: {
         flex: 1,
+        backgroundColor: colors.appWhite,
         alignItems: 'center',
         justifyContent: 'center'
     },

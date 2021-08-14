@@ -8,12 +8,13 @@ const constants = {
     CHAR_HEIGHT_WIDTH_RATIO_IOS: 1.956,
     FONT_SIZE_MULTIPLIER_IOS: 0.82,
     FIREBASE_CONFIG: { //TODO: replace with your own firebase config
-        apiKey: '',
-        authDomain: '',
-        databaseURL: '',
-        projectId: '',
-        storageBucket: '',
-        messagingSenderId: ''
+        apiKey: "",
+        authDomain: "",
+        databaseURL: "",
+        projectId: "",
+        storageBucket: "",
+        messagingSenderId: "",
+        appId: ""
     }
 };
 

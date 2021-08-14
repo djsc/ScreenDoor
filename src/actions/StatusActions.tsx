@@ -1,5 +1,4 @@
 import firebase from '@firebase/app';
-import {database} from 'firebase';
 import { createAction, ActionType } from 'typesafe-actions';
 import { Status, StatusType } from '../types';
 import moment from 'moment';
@@ -37,7 +36,7 @@ export const setupStatusListener = () => (
         }
         //@ts-ignore
         firebase.database().ref(`/users/${currentUser.uid}/lastHeartbeat`)
-            .on('value', (snapshot: database.DataSnapshot | null) => {
+            .on('value', (snapshot) => {
                 dispatch(statusActions.fetchingStatus());
                 if (snapshot === null || typeof snapshot.val() !== 'number') {
                     dispatch(statusActions.fetchStatusSucceeded(getStatus()));

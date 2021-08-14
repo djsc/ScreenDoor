@@ -131,9 +131,11 @@ const mapDispatchToProps = (dispatch: ThunkDispatch<RootState, void, AnyAction>)
 
 const styles = StyleSheet.create({
     touchableContainer: {
-        flex: 1
+        flex: 1,
+        backgroundColor: colors.appWhite
     },
     container: {
+        backgroundColor: colors.appWhite,
         flexDirection: 'column',
         justifyContent: 'flex-start',
         paddingBottom: whitespace.m
