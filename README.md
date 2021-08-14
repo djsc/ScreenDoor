@@ -1,6 +1,6 @@
 # ScreenDoor
 
-This is a React Native app compatible with Android and iOS. It simply allows users to post short formatted messages to a Firebase Realtime Database. When coupled with [ScreenDoorPi](https://github.com/djsc/ScreenDoorPi/), the last message posted will be displayed on a remote LCD connected to a Raspberry Pi. The status of ScreenDoorPi is displayed on the status screen based off of heartbeats stored in the database. Images: [1](images/sdoor1.png) [2](images/sdoor2.png) [3](images/sdoor3.png) [4](images/sdoor4.png) [5](images/sdoor5.png)
+This is a React Native app compatible with Android and iOS. It simply allows users to post short formatted messages to a Firebase Realtime Database. When coupled with [ScreenDoorPi](https://github.com/djsc/ScreenDoorPi/), the last message posted will be displayed on a remote LCD connected to a Raspberry Pi. The status of ScreenDoorPi is displayed on the status screen based off of heartbeats stored in the database. Images: [1](images/sdoorpi1.png) [2](images/sdoor1.png) [3](images/sdoor2.png) [4](images/sdoor3.png) [5](images/sdoor4.png) [6](images/sdoor5.png)
 
 ## Firebase Setup:
 * Go to https://console.firebase.google.com/
