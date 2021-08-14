@@ -36,7 +36,17 @@ This is a React Native app compatible with Android and iOS. It simply allows use
 ```
 
 ## Configuration
-* Go to src/config/constants.tsx and add your Firebase Configuration object that was obtained earlier
+* Create a .env file in the project's root directory to store your Firebase configuration
+* Copy and paste the following into the file. Insert the constants that were obtained earlier in the instructions. The constants should be inside the quotes.
+  ```
+    FIREBASE_API_KEY=''
+    FIREBASE_AUTH_DOMAIN=''
+    FIREBASE_DATABASE_URL=''
+    FIREBASE_PROJECT_ID=''
+    FIREBASE_STORAGE_BUCKET=''
+    FIREBASE_MESSAGING_SENDER_ID=''
+    FIREBASE_APP_ID=''
+  ```
 
 ## Build environment setup
 * Install yarn: https://yarnpkg.com/en/docs/install
