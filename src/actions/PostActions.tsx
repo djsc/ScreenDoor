@@ -1,8 +1,7 @@
 import firebase from '@firebase/app';
 import { createAction, ActionType } from 'typesafe-actions';
 import { Post } from '../types';
-import moment from 'moment';
-import 'moment-timezone';
+import moment from 'moment-timezone';
 import { v4 as uuidv4 } from 'uuid';
 import { ThunkDispatch } from 'redux-thunk';
 import { RootState } from '../reducers';

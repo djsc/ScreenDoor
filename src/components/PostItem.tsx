@@ -5,9 +5,7 @@ import Button from './Button';
 import Spinner from './Spinner';
 import { colors, fontSizes, whitespace } from '../config/globalStyles';
 import { Post } from '../types';
-import moment from 'moment';
-// tslint:disable-next-line:no-import-side-effect
-import 'moment-timezone';
+import moment from 'moment-timezone';
 import { getLines } from '../lib/text';
 
 const LARGE_LINE_WIDTH_THRESHHOLD = 30; // if displayWidthChars is >= this number, lines should have smaller text size
