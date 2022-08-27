@@ -6,7 +6,7 @@ import AppReducer from '../reducers/AppReducer';
 import SettingsReducer from '../reducers/SettingsReducer';
 import AuthReducer from '../reducers/AuthReducer';
 import StatusReducer from '../reducers/StatusReducer';
-import AsyncStorage from '@react-native-async-storage/async-storage';
+import AsyncStorage from '@react-native-community/async-storage';
 
 const settingsPersistConfig = {
     key: 'settings',
